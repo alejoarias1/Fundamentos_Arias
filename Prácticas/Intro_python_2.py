@@ -38,3 +38,18 @@ def ejercicio4(lista4,lista5,elemento):
 lista4=[1,2,3]
 lista5=[4,5,6]
 ejercicio4(lista4,lista5,1)
+
+#ejercicio5
+def ejercicio5(lista6):
+    par_impar=[]
+    for i in lista6:
+        if i %2==0:
+            par_impar.append(True)
+        else:
+            par_impar.append(False)
+    return par_impar
+            
+lista6=[1,2,3,4]
+print(ejercicio5(lista6))
+
+
