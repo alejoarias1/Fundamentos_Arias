@@ -50,7 +50,16 @@ print(buscador_numeros)
 string2= "Hoy estuvimos trabajando con re -regular expression- en python -con VSCode-"
 print(re.findall(r'-.+-',string2))
 
-#ejercicio11
+#ejercicio12
 stringg="Hoy estuvimos trabajando con re _regular expression_ en python: con VSCode-"
 nuevo_string= re.sub(r"[ _:-]", "|", stringg)
 print (nuevo_string)
+
+#ejercicio 13
+texto13="a 2 ! d ? jj"
+texto13_mod=re.sub(r'\W{2}',"_", texto13)
+print(texto13_mod)
+
+#ejercicio 14
+texto13_mod2=re.sub(r'[\s\t]',";",texto13)
+print(texto13_mod2)
