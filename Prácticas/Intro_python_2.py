@@ -3,11 +3,10 @@ def procedimiento (lista):
     for i in lista :
         if i == "control":
             posicion = lista.index(i)
-            lista.insert(posicion,"revisado")
-            lista.remove (i)
+            lista[posicion]="revisado"
     print(lista)
 
-lista = ["a", "control", "c"]
+lista = ["a", "control", "v"]
 procedimiento (lista)
 
 #ejercicio 2
@@ -22,7 +21,8 @@ ejercicio2(lista3)
 def ejercicio3(elemento):
     lista2=["e","y","a"]
     for i in lista2:
-        return lista2.index(elemento)
+        if i == elemento:
+            return lista2.index(elemento)
     
 print(ejercicio3("a"))
 
@@ -52,4 +52,11 @@ def ejercicio5(lista6):
 lista6=[1,2,3,4]
 print(ejercicio5(lista6))
 
+#ejercicio9
+def productoria(lista_numeros):
+    product=1
+    for i in lista_numeros:
+        product*=i
+    return product
+productoria([1,2,3,4])        
 
