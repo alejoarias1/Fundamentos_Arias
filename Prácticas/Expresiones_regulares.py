@@ -63,3 +63,8 @@ print(texto13_mod)
 #ejercicio 14
 texto13_mod2=re.sub(r'[\s\t]',";",texto13)
 print(texto13_mod2)
+
+#ejercicio 15
+def mail_correcto(string):
+    return bool (re.search('^\w+[.-]?\w*[@][a-z]+[.][a-z]+[.]?[a-z]?$',string))
+print(mail_correcto("alearias519@gmail.com"))
