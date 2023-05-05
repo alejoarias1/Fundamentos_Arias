@@ -1,5 +1,5 @@
 #A
-#La unica opción correcta es la última.
+#FOTO RESPUESTAS Y JUSTIFICACIONES
 
 #B
 #debe hacer git clone

@@ -1,5 +1,6 @@
 import os
-
+import glob
+'''''
 #ejercicio 1
 #Realizá un programa que lea un archivo e imprima cuántas líneas de ese archivo no empiezan con una determinada letra (por ejemplo que imprima cuántas líneas no empiezan con "P").
 contador=0
@@ -68,3 +69,49 @@ contenido2 = archivo2.read()
 
 archivo_nuevo.write(contenido1)
 archivo_nuevo.write(contenido2)
+
+#Escribí un programa que abra dos documentos 
+# y guarde la tercera linea de ambos en un otro documento llamado archivofinal
+
+# Abrir los dos archivos de entrada
+archivo1 = open("archivo1.txt", "r")
+archivo2 = open("archivo2.txt", "r")
+
+# Leer el contenido de cada archivo
+lineas1 = archivo1.readlines()
+lineas2 = archivo2.readlines()
+
+# Extraer la tercera línea de cada archivo
+linea3_archivo1 = lineas1[2]
+linea3_archivo2 = lineas2[2]
+
+# Crear un nuevo archivo llamado "archivofinal"
+archivofinal = open("archivofinal.txt", "w")
+
+# Escribir las líneas extraídas de los dos archivos en el nuevo archivo
+archivofinal.write(linea3_archivo1)
+archivofinal.write(linea3_archivo2)
+
+# Cerrar todos los archivos
+archivo1.close()
+archivo2.close()
+archivofinal.close()
+'''''
+
+#ejercicio 10
+
+def ejercicio10():
+    os.chdir("Carpeta1")
+    archivostxt=glob.glob("*.txt")
+    os.mkdir("Resultados")
+    for archivo in archivostxt:
+        with open (archivo, "r") as cada_archivo:
+            txt=cada_archivo.readlines()
+            print(txt) 
+            os.chdir("Resultados")
+            with open ("arbolito.txt","a") as salida:
+                for lineas in txt:
+                    salida.write(lineas + "\n")
+            os.chdir("..")
+
+print (ejercicio10())

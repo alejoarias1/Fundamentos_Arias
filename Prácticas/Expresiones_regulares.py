@@ -21,12 +21,16 @@ else:
 #ejercicio 3
 #Verifique 
 #si un string dado tiene una h seguida de ninguna o más e.
-texto="Escribí un programa que verifique si un string tiene al menos un carácter permitido"
+texto="Escribí un programa que verifique si un string_tiene al menos un carácter permitido"
 he=re.findall(r'he*',texto)
 if len(he)>0:
     print("el string dado tiene una h seguida de ninguna o más e.")
 else:
     print ("el string dado no tiene una h seguida de ninguna o más e.")
+
+#ejercicio 4
+#Realizá un programa que encuentre una palabra unida a otra con un guión bajo en un string dado (el string no debe contener espacios).
+print(re.findall(r'\w+_\w+',texto))
 
 #ejercicio 5
 #Escribí un programa que diga si un string empieza con un número específico.
@@ -37,8 +41,8 @@ if c!=None:
 else:
     print("el string no comienza con 1")
 
-#ejercicio 7
-#Realizá un programa que encuentre un string que contenga solamente letras minúsculas, mayúsculas, espacios y números.
+#ejercicio 6
+#Escribí un programa que dada una lista de strings verifique si se encuentran en una frase dada.
 frase="soy de racing el mas grande del pais"
 lista_strings=["boca","mas","grande"]
 for i in lista_strings:
@@ -46,6 +50,9 @@ for i in lista_strings:
         print("la palabra "+ i +" se encuentra en la frase")
     else:
        print("la palabra "+ i +" no se encuentra en la frase")
+
+#ejercicio 7
+
 
 #ejercicio 8
 #Escribí un programa que separe y devuelva los caracteres númericos de un string.
@@ -57,6 +64,14 @@ print(buscador_numeros)
 #Escribí un programa que extraiga los caracteres que estén entre guiones en un string. (String de ejemplo: "Hoy estuvimos trabajando con re -regular expression- en python -con VSCode-")
 string2= "Hoy estuvimos trabajando con re -regular expression- en python -con VSCode-"
 print(re.findall(r'-.+-',string2))
+
+#ejercicio 10
+#Obtené las substrings y las posiciones de estas en una string dada considerando que las substrings están delimitadas por los caracteres @ o &.
+stringgg="Hoy fui al cine @Av. Corrientes& y vi una buena película @Los Vengadores&"
+print(re.findall(r'@.+&',stringgg))
+
+#ejercicio 11
+#Realizá un programa que dado una lista de strings verifique que dos palabras dentro del string empiecen con la letra P y las imprima. (Lista de ejemplo: ["Práctica Python", "Práctica C++", "Práctica Fortran"]).
 
 #ejercicio12
 #Escribí un programa que reemplace todas las ocurrencias de espacios, guiones bajos y dos puntos por la barra vertical (|).
@@ -80,3 +95,25 @@ print(texto13_mod2)
 def mail_correcto(string):
     return bool (re.search('^\w+[.-]?\w*[@][a-z]+[.][a-z]+[.]?[a-z]?$',string))
 print(mail_correcto("alearias519@gmail.com"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
