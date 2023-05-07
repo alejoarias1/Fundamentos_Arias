@@ -1,6 +1,7 @@
 import os
 import glob
-
+import re
+'''''
 #ejercicio 1
 #Realizá un programa que lea un archivo e imprima cuántas líneas de ese archivo no empiezan con una determinada letra (por ejemplo que imprima cuántas líneas no empiezan con "P").
 contador=0
@@ -96,9 +97,11 @@ archivofinal.write(linea3_archivo2)
 archivo1.close()
 archivo2.close()
 archivofinal.close()
-
+'''''
 
 #ejercicio 10
+#Escribí un programa que lea todos los archivos .txt de una carpeta dada (Carpeta1) y los añada a un 
+# archivo dentro de la carpeta Resultado, que a su vez se tiene que encontrar dentro de Carpeta1.
 
 def ejercicio10():
     os.chdir("Carpeta1")
@@ -116,3 +119,24 @@ def ejercicio10():
             os.chdir("..")
 
 print (ejercicio10())
+
+#ejercicio extra
+#lo mismo que el anterior pero te tiene que capturar los mails de los txt,
+#no los txts enteros
+
+def ejercicio_extra():
+    os.chdir("Carpeta1")
+    archivostxt=glob.glob("*.txt")
+    if not os.path.exists("Resultados"):
+        os.mkdir("Resultados")
+    for archivo in archivostxt:
+        with open (archivo, "r") as cada_archivo:
+            txt=cada_archivo.readlines()
+            print(txt) 
+            os.chdir("Resultados")
+            with open ("arbolito.txt","a") as salida:
+                for lineas in txt:
+                    salida.write(lineas + "\n")
+            os.chdir("..")
+
+print (ejercicio_extra())
