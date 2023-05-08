@@ -96,13 +96,21 @@ def mail_correcto(string):
     return bool (re.search('^\w+[.-]?\w*[@][a-z]+[.][a-z]+[.]?[a-z]?$',string))
 print(mail_correcto("alearias519@gmail.com"))
 
+#ejercicio VV
+#Buscar en la siguiente secuencia, todos los patrone que comiencen por & y caben por %$
 
+def VV(string):
+    print(re.findall(r'\&(.*?)\%\$',string))
 
+VV("vwrevwn35n32o5n32n532jin532&vewkvnemvoseomom&l;mewvemwovew;m*&^6vaevvkems;vevm%$vewwv%$ feveve vkwe[31532095llc;ac7777&&&&&f32f45123%$")
 
+# obtener la lista de los substrings delimitados entre '<' y '>' 
+#que no incluyan ninguna 'o'.
 
+def ejercicio(string):
+    print(re.findall(r'<([^o]*?)>',string))
 
-
-
+ejercicio("ds<hola>hsb<hhj>sdk<469>nkd")
 
 
 

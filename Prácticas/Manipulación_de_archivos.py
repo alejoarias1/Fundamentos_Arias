@@ -1,7 +1,7 @@
 import os
 import glob
 import re
-'''''
+
 #ejercicio 1
 #Realizá un programa que lea un archivo e imprima cuántas líneas de ese archivo no empiezan con una determinada letra (por ejemplo que imprima cuántas líneas no empiezan con "P").
 contador=0
@@ -97,7 +97,6 @@ archivofinal.write(linea3_archivo2)
 archivo1.close()
 archivo2.close()
 archivofinal.close()
-'''''
 
 #ejercicio 10
 #Escribí un programa que lea todos los archivos .txt de una carpeta dada (Carpeta1) y los añada a un 
@@ -130,13 +129,37 @@ def ejercicio_extra():
     if not os.path.exists("Resultados"):
         os.mkdir("Resultados")
     for archivo in archivostxt:
-        with open (archivo, "r") as cada_archivo:
-            txt=cada_archivo.readlines()
-            print(txt) 
+        with open (archivo, "r") as cada_archivo: 
+            archivoss=cada_archivo.read()
+            mails=re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b',archivoss)
+            print (mails)
             os.chdir("Resultados")
             with open ("arbolito.txt","a") as salida:
-                for lineas in txt:
+                for lineas in mails:
                     salida.write(lineas + "\n")
             os.chdir("..")
 
 print (ejercicio_extra())
+
+#Deberás extraer los números de teléfono de CABA (+54911########) y guardarlos en un
+#archivo nuevo, en una carpeta llamada” Telefonos”, creada dentro de la CarpetaParcial.
+
+def extraer_numeros():
+    os.chdir("CarpetaParcial")
+    if not os.path.exists("Telefonos"):
+        os.mkdir("Telefonos")
+    telefonos=glob.glob("*.txt")
+    for cada_telefono in telefonos:
+        with open(cada_telefono,"r") as telefonoss:
+            telefonostelefonos=telefonoss.read()
+            telefonos_final=re.findall(r'\+54911[0-9]{8}',telefonostelefonos)
+            print(telefonos_final)
+            os.chdir("Telefonos")
+            with open("lista_telefonos","a") as archivo_telefonos:
+                for telefonos_xd in telefonos_final:
+                    archivo_telefonos.write(telefonos_xd + "\n")
+            os.chdir("..")
+
+print(extraer_numeros())
+
+#NO TE PODES MOVER PARA UNA CARPETA EN LOS COSTADOS, SOLO PARA ATRAS O ADELANTE
